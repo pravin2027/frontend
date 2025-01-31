@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Login from "./Login";
 import Signup from "./signup";
 import AssignmentTracker from "./AssignmentTracker";
-import "./styles.css";
+import "./Styles.css";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
