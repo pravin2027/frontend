@@ -9,7 +9,7 @@ const Login = ({ onLogin, showSignup }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5002/api/users/login', {
+      const response = await axios.post('https://backend-e2vm.onrender.com/api/users/login', {
         email,
         password
       });

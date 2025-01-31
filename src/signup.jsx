@@ -14,6 +14,7 @@ const Signup = ({ onSignup, showLogin }) => {
     setError("");
     
     try {
+      console.log('Attempting signup with API URL:', import.meta.env.VITE_API_URL);
       const response = await authService.signup({
         name,
         email,
@@ -29,10 +30,22 @@ const Signup = ({ onSignup, showLogin }) => {
       alert("Sign up successful! Please log in.");
       showLogin();
     } catch (error) {
-      const errorMessage = error.response?.data?.message || 
-                          "Unable to connect to server. Please try again later.";
+      let errorMessage = "Unable to connect to server. Please try again later.";
+      
+      if (error.response) {
+        // Server responded with error
+        errorMessage = error.response.data.message || errorMessage;
+      } else if (error.request) {
+        // Request made but no response
+        errorMessage = "No response from server. Please check your internet connection.";
+      }
+      
       setError(errorMessage);
-      console.error('Signup error:', error);
+      console.error('Signup error details:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status
+      });
     } finally {
       setLoading(false);
     }

@@ -9,7 +9,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json'
   },
-  timeout: 10000 // 10 second timeout
+  timeout: 15000 // Increased timeout for deployed server
 });
 
 // Add better error handling
@@ -28,6 +28,7 @@ api.interceptors.response.use(
 // Add request interceptor for authentication
 api.interceptors.request.use(
   config => {
+    console.log('Making request to:', config.baseURL + config.url);
     const token = localStorage.getItem('token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
