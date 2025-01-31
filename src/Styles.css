@@ -1,0 +1,70 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6d83f3, #8ac6f3);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Container */
+  .container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Form Inputs */
+  input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  /* Buttons */
+  button {
+    background: #4c63d8;
+    color: rgb(252, 236, 236);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  button:hover {
+    background: #3947a3;
+  }
+  
+  /* Lists */
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    background: rgb(134, 102, 216);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(250, 249, 249, 0.1);
+  }
+  
+  footer {
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(230, 217, 217);
+  }
+  
